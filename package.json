@@ -1,0 +1,15 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "Proyecto con gulp, SASS y HTML5",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SASS",
+    "Gulp"
+  ],
+  "author": "Sergio Ruiz",
+  "license": "ISC"
+}
