@@ -1,0 +1,7 @@
+// Forma de asociar archivos SASS vieja
+// @import "base/variables";
+// @import "contenido/contenido";
+
+// Forma de asociar archivos SASS nueva
+@use "base";
+@use "layout";

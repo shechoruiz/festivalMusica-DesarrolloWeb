@@ -1,0 +1,5 @@
+// Archivo y declaración necesaria para poder usar la nueva forma de importar archivos SASS: @use
+@forward "variables";
+@forward "mixins";
+@forward "normalize";
+@forward "globales";
