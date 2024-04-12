@@ -2,6 +2,10 @@ const { src, dest, watch, parallel } = require("gulp");
 // CSS
 const sass = require("gulp-sass")(require("sass"));
 const plumber = require("gulp-plumber");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const postcss = require("gulp-postcss");
+const sourcemaps = require("gulp-sourcemaps");
 // Imagenes
 const imagemin = require("gulp-imagemin");
 const cache = require("gulp-cache");
@@ -10,8 +14,11 @@ const avif = require("gulp-avif");
 
 function css(callback) {
   src("src/scss/**/*.scss") // Identificar el archivo SASS
+    .pipe(sourcemaps.init()) // Iniciar el sourcemap
     .pipe(plumber())
     .pipe(sass()) // Compilarlo
+    .pipe(postcss([autoprefixer(), cssnano()])) // Autoprefijar y minificarlo
+    .pipe(sourcemaps.write(".")) // Terminar el sourcemap
     .pipe(dest("build/css")); // Almacenarlo en el disco duro
 
   callback(); // Callback que indica que la tarea ha terminado
